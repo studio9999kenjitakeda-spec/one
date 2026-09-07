@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomolhari&display=swap');
+
+:root {
+  --font-family-base: 'Kozuka Mincho Pro', 'Kozuka Mincho Pr6N', '小塚明朝', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --color-text-primary: #1e1e1e;
+  --color-text-secondary: #444;
+  --color-text-muted: #747474;
+  --color-text-on-image: #fff;
+  --color-text-on-accent: #fffefe;
+  --color-text-accent: #4e97ea;
+}
+
+/* ==========================================================================
+   Reset / Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, p, ul, form {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.en {
+  font-family: 'Jomolhari', serif;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #fff;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 clamp(20px, 6vw, 112px);
+}
+
+.logo {
+  font-family: 'Jomolhari', serif;
+  font-size: clamp(18px, 2vw, 24px);
+  flex: 1 0 0;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 38px);
+}
+
+.nav-desktop a {
+  font-family: 'Jomolhari', serif;
+  font-size: 20px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.nav-desktop a:hover {
+  opacity: 0.6;
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  width: 32px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text-secondary);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 11px; }
+.hamburger span:nth-child(3) { top: 22px; }
+
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  width: 100%;
+  background: #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 6vh, 48px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 200;
+}
+
+.nav-mobile.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-mobile a {
+  font-family: 'Jomolhari', serif;
+  font-size: clamp(26px, 7vw, 36px);
+  color: var(--color-text-primary);
+  transition: opacity 0.2s ease;
+}
+
+.nav-mobile a:hover {
+  opacity: 0.6;
+}
+
+.nav-mobile-close {
+  position: absolute;
+  top: clamp(16px, 4vh, 24px);
+  right: clamp(20px, 6vw, 32px);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-mobile-close:hover {
+  color: var(--color-text-primary);
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  margin: 20px clamp(20px, 6vw, 114px) 0;
+  height: min(60vw, 677px);
+  min-height: 260px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  background: #d9d9d9;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Jomolhari', serif;
+  font-size: clamp(40px, 9vw, 128px);
+  color: var(--color-text-on-image);
+  white-space: nowrap;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+   Layout / Sections
+   ========================================================================== */
+.container {
+  max-width: 1508px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 6vw, 114px);
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-family: 'Jomolhari', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: clamp(30px, 5vw, 60px);
+}
+
+/* ==========================================================================
+   Profile
+   ========================================================================== */
+.profile-content {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(32px, 6vw, 128px);
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  flex: 1 1 260px;
+  max-width: 522px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-text {
+  flex: 1 1 320px;
+  max-width: 630px;
+}
+
+.profile-name {
+  font-size: 42px;
+  margin-bottom: 24px;
+}
+
+.profile-name-en {
+  font-family: 'Jomolhari', serif;
+  color: var(--color-text-muted);
+  font-size: 20px;
+}
+
+.profile-text > p:not(.profile-name) {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.profile-bio {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.profile-text h3 {
+  font-size: 24px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.plain-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.plain-list li::before {
+  content: '・';
+  position: absolute;
+  left: 0;
+}
+
+/* ==========================================================================
+   Work grid (Graphic / Web Tool)
+   ========================================================================== */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 311px));
+  justify-content: space-between;
+  row-gap: 60px;
+  column-gap: 24px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.work-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.work-thumb:hover img,
+.work-thumb:focus-visible img {
+  transform: scale(1.05);
+}
+
+.work-title {
+  font-size: clamp(18px, 1.8vw, 28px);
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 20px;
+}
+
+.skill-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Jomolhari', serif;
+  font-size: 20px;
+}
+
+.chk {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 2px solid #000;
+  position: relative;
+}
+
+.chk.is-checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 11px;
+  border-right: 2px solid #4e97ea;
+  border-bottom: 2px solid #4e97ea;
+  transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   Planning
+   ========================================================================== */
+.planning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px 40px;
+}
+
+.planning-card {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  transition: opacity 0.2s ease;
+}
+
+.planning-card:hover {
+  opacity: 0.75;
+}
+
+.planning-title {
+  font-size: clamp(18px, 1.8vw, 28px);
+}
+
+.planning-visual {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: clamp(24px, 8%, 130px);
+}
+
+.planning-img {
+  width: min(304px, 100%);
+  aspect-ratio: 304 / 196;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.planning-icon {
+  position: absolute;
+  right: -14px;
+  bottom: -14px;
+  width: clamp(32px, 5vw, 48px);
+  height: clamp(32px, 5vw, 48px);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+.contact-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.qr-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.qr-code {
+  width: 120px;
+  height: auto;
+}
+
+.contact-email {
+  font-size: 20px;
+}
+
+.contact-email a {
+  font-size: 0.8rem;
+  border-bottom: 1px solid currentColor;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group label {
+  font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  background: #fff;
+  color: var(--color-text-primary);
+  box-shadow: inset 0 0 4px #444;
+  background-color: #f8f8f8;
+}
+
+.form-group input {
+  height: 56px;
+}
+
+.form-group textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid #4e97ea;
+  outline-offset: 1px;
+}
+
+.btn-submit {
+  align-self: center;
+  background: #4e97ea;
+  color: var(--color-text-on-accent);
+  font-size: 20px;
+  padding: 15px 50px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.btn-submit:hover {
+  background: #3a7fd1;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid #bababa;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-title {
+  font-family: 'Jomolhari', serif;
+  font-size: clamp(20px, 4vw, 32px);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.sns-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(32px, 8vw, 97px);
+}
+
+.sns-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: opacity 0.2s ease;
+}
+
+.sns-item:hover {
+  opacity: 0.7;
+}
+
+.sns-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.sns-item span {
+  font-family: 'Jomolhari', serif;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.copyright {
+  font-family: 'Jomolhari', serif;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Modal (Detail panel)
+   ========================================================================== */
+/*
+  <dialog> はブラウザ標準機能で開閉します(showModal() / close())。
+  中央寄せは <dialog> の初期スタイル(inset:0; margin:auto)をそのまま利用し、
+  見た目(背景・角丸・サイズ)と開閉アニメーションだけをここで指定しています。
+*/
+dialog.work-dialog {
+  border: none;
+  padding: 0;
+  background: #fff;
+  border-radius: 12px;
+  width: min(920px, calc(100% - 48px));
+  max-height: 88vh;
+  overflow: hidden;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease, overlay 0.25s ease allow-discrete, display 0.25s ease allow-discrete;
+}
+
+dialog.work-dialog[open] {
+  display: flex;
+}
+
+dialog.work-dialog::backdrop {
+  background: rgba(20, 20, 20, 0.6);
+  opacity: 1;
+  transition: opacity 0.25s ease, overlay 0.25s ease allow-discrete, display 0.25s ease allow-discrete;
+}
+
+/* 開くときのフェード＋スライドイン(対応ブラウザのみ／未対応でも通常表示されます) */
+@starting-style {
+  dialog.work-dialog[open] {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  dialog.work-dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+.modal-scroll {
+  overflow-y: auto;
+  padding: clamp(24px, 4vw, 48px);
+  padding-top: clamp(56px, 8vw, 64px);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--color-text-secondary);
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--color-text-primary);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  display: flex;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+.modal-image {
+  flex: 1 1 320px;
+  max-width: 380px;
+  border-radius: 10px;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.modal-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.modal-info {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.modal-info h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  padding-right: 30px;
+}
+
+.modal-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.modal-skills {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  padding-left: 0;
+  margin-bottom: 24px;
+}
+
+.modal-skills li {
+  font-size: 15px;
+}
+
+.modal-skills .chk {
+  width: 18px;
+  height: 18px;
+}
+
+.modal-block {
+  margin-bottom: 22px;
+}
+
+.modal-block h4 {
+  font-family: 'Jomolhari', serif;
+  font-size: 16px;
+  color: var(--color-text-accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.modal-block ul li {
+  font-size: 14px;
+  line-height: 1.8;
+  padding-left: 18px;
+  position: relative;
+}
+
+.modal-block ul li::before {
+  content: '・';
+  position: absolute;
+  left: 0;
+}
+
+.modal-block p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================================================
+   Responsive — Mobile (see mobile Figma reference)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: minmax(0, 311px);
+    justify-content: center;
+  }
+
+  .planning-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 471px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header-inner {
+    height: 68px;
+  }
+
+  .hero {
+    margin-top: 14px;
+    height: min(140vw, 500px);
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .profile-content {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .profile-photo {
+    flex: 0 0 200px;
+    width: 200px;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .profile-content {
+    justify-content: center;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .modal-image {
+    max-width: 100%;
+  }
+
+  dialog.work-dialog {
+    max-height: 92vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-card,
+  .work-thumb {
+    max-width: 100%;
+  }
+
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .qr-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
