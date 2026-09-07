@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | Hinata Mizuno</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Hinata Mizuno</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <p class="logo">Kenji Takeda</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="logo">Kenji Takeda</p>
 
-    <nav class="nav-desktop" aria-label="メインナビゲーション">
+      <nav class="nav-desktop" aria-label="メインナビゲーション">
+        <a href="#top">Home</a>
+        <a href="#profile">Profile</a>
+        <a href="#graphic">Graphic</a>
+        <a href="#webtool">Web Tool</a>
+        <a href="#planning">Planning</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="mobileNav" aria-label="モバイルナビゲーション">
+      <button class="nav-mobile-close" id="mobileNavClose" type="button" aria-label="メニューを閉じる">&times;</button>
       <a href="#top">Home</a>
       <a href="#profile">Profile</a>
       <a href="#graphic">Graphic</a>
@@ -20,545 +37,519 @@
       <a href="#planning">Planning</a>
       <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <main>
 
-  <nav class="nav-mobile" id="mobileNav" aria-label="モバイルナビゲーション">
-    <button class="nav-mobile-close" id="mobileNavClose" type="button" aria-label="メニューを閉じる">&times;</button>
-    <a href="#top">Home</a>
-    <a href="#profile">Profile</a>
-    <a href="#graphic">Graphic</a>
-    <a href="#webtool">Web Tool</a>
-    <a href="#planning">Planning</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <section class="hero" id="top">
+      <div class="hero-slider" id="heroSlider">
+        <img class="hero-slide is-active" src="assets/img/hero-slide-1.jpg" alt="ポートフォリオ ビジュアル 1">
+        <img class="hero-slide" src="assets/img/hero-slide-2.jpg" alt="ポートフォリオ ビジュアル 2">
+        <img class="hero-slide" src="assets/img/hero-slide-3.jpg" alt="ポートフォリオ ビジュアル 3">
+      </div>
+      <h1 class="hero-title">Portfolio</h1>
+    </section>
 
-<main>
+    <div class="container">
 
-  <section class="hero" id="top">
-    <div class="hero-slider" id="heroSlider">
-      <img class="hero-slide is-active" src="assets/img/hero-slide-1.jpg" alt="ポートフォリオ ビジュアル 1">
-      <img class="hero-slide" src="assets/img/hero-slide-2.jpg" alt="ポートフォリオ ビジュアル 2">
-      <img class="hero-slide" src="assets/img/hero-slide-3.jpg" alt="ポートフォリオ ビジュアル 3">
+      <section id="profile" class="section profile-section">
+        <h2 class="section-title">Profile</h2>
+        <div class="profile-content">
+          <div class="profile-photo">
+            <img src="assets/img/profile-photo.png" alt="水野ひなた プロフィール写真">
+          </div>
+          <div class="profile-text">
+            <p class="profile-name">水野 ひなた <span class="profile-name-en">Hinata Mizuno</span></p>
+            <p>フリーランス イラストレーター / デザイナー見習い</p>
+            <p>東京都在住</p>
+            <p class="profile-bio">
+              美術大学を卒業したばかりの駆け出しクリエイター。「日常のなかの小さな幸せ」をテーマに、温かみのあるイラストやデザインを制作しています。いつか自分のイラストが絵本になるのが夢です。</p>
+
+            <h3>趣味・特技</h3>
+            <ul class="plain-list">
+              <li>水彩画（特に風景画が得意）</li>
+              <li>カフェ巡り＆ラテアート練習中</li>
+              <li>散歩しながらスケッチ</li>
+              <li>猫の写真を撮ること</li>
+            </ul>
+
+            <h3>使えるツール</h3>
+            <ul class="plain-list">
+              <li>Figma（UI/Webデザイン）</li>
+              <li>Adobe Illustrator（ロゴ・グラフィック）</li>
+              <li>Adobe Photoshop（写真加工・合成）</li>
+              <li>Canva（SNS用バナー）</li>
+            </ul>
+
+            <h3>SNS</h3>
+            <ul class="plain-list">
+              <li>Instagram: @hinata_creates</li>
+              <li>X (Twitter): @hinata_mizuno</li>
+              <li>Behance: behance.net/hinatamizuno</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="graphic" class="section">
+        <h2 class="section-title">Graphic</h2>
+        <div class="work-grid">
+
+          <article class="work-card">
+            <button class="work-thumb" type="button" data-modal-open="modal-logo">
+              <img src="assets/img/work-logo.jpg" alt="ロゴデザイン">
+            </button>
+            <h3 class="work-title">ロゴデザイン</h3>
+            <ul class="skill-list">
+              <li><span class="chk"></span>illustrator</li>
+              <li><span class="chk is-checked"></span>Photoshop</li>
+              <li><span class="chk"></span>Figma</li>
+              <li><span class="chk"></span>Canva</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <button class="work-thumb" type="button" data-modal-open="modal-flyer">
+              <img src="assets/img/work-flyer.jpg" alt="チラシ制作">
+            </button>
+            <h3 class="work-title">チラシ制作</h3>
+            <ul class="skill-list">
+              <li><span class="chk is-checked"></span>illustrator</li>
+              <li><span class="chk"></span>Photoshop</li>
+              <li><span class="chk"></span>Figma</li>
+              <li><span class="chk"></span>Canva</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <button class="work-thumb" type="button" data-modal-open="modal-brand">
+              <img src="assets/img/work-brand.jpg" alt="ブランドデザイン">
+            </button>
+            <h3 class="work-title">ブランドデザイン</h3>
+            <ul class="skill-list">
+              <li><span class="chk"></span>illustrator</li>
+              <li><span class="chk"></span>Photoshop</li>
+              <li><span class="chk is-checked"></span>Figma</li>
+              <li><span class="chk"></span>Canva</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="webtool" class="section">
+        <h2 class="section-title">Web Tool</h2>
+        <div class="work-grid">
+
+          <article class="work-card">
+            <button class="work-thumb" type="button" data-modal-open="modal-banner">
+              <img src="assets/img/work-apparel-banner.jpg" alt="アパレルバナー">
+            </button>
+            <h3 class="work-title">アパレルバナー</h3>
+            <ul class="skill-list">
+              <li><span class="chk"></span>illustrator</li>
+              <li><span class="chk is-checked"></span>Photoshop</li>
+              <li><span class="chk"></span>Figma</li>
+              <li><span class="chk"></span>Canva</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <button class="work-thumb" type="button" data-modal-open="modal-ui">
+              <img src="assets/img/work-ui.jpg" alt="UIデザイン">
+            </button>
+            <h3 class="work-title">UIデザイン</h3>
+            <ul class="skill-list">
+              <li><span class="chk"></span>illustrator</li>
+              <li><span class="chk"></span>Photoshop</li>
+              <li><span class="chk is-checked"></span>Figma</li>
+              <li><span class="chk"></span>Canva</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <button class="work-thumb" type="button" data-modal-open="modal-site">
+              <img src="assets/img/work-site.jpg" alt="サイトデザイン">
+            </button>
+            <h3 class="work-title">サイトデザイン</h3>
+            <ul class="skill-list">
+              <li><span class="chk"></span>illustrator</li>
+              <li><span class="chk"></span>Photoshop</li>
+              <li><span class="chk is-checked"></span>Figma</li>
+              <li><span class="chk is-checked"></span>Canva</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="planning" class="section">
+        <h2 class="section-title">Planning</h2>
+        <div class="planning-grid">
+
+          <a class="planning-card" href="#" target="_blank" rel="noopener">
+            <h3 class="planning-title">テーマパーク企画提案</h3>
+            <div class="planning-visual">
+              <img class="planning-img" src="assets/img/planning-themepark.jpg" alt="テーマパーク企画提案 資料">
+              <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
+            </div>
+          </a>
+
+          <a class="planning-card" href="#" target="_blank" rel="noopener">
+            <h3 class="planning-title">AIを使ったレシピ提案</h3>
+            <div class="planning-visual">
+              <img class="planning-img" src="assets/img/planning-recipe.jpg" alt="AIを使ったレシピ提案 資料">
+              <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
+            </div>
+          </a>
+
+          <a class="planning-card" href="#" target="_blank" rel="noopener">
+            <h3 class="planning-title">絵本制作企画</h3>
+            <div class="planning-visual">
+              <img class="planning-img" src="assets/img/planning-picturebook.jpg" alt="絵本制作企画 資料">
+              <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
+            </div>
+          </a>
+
+          <a class="planning-card" href="#" target="_blank" rel="noopener">
+            <h3 class="planning-title">時事課題</h3>
+            <div class="planning-visual">
+              <img class="planning-img" src="assets/img/planning-news.jpg" alt="時事課題 資料">
+              <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-area">
+
+          <div class="qr-row">
+            <img class="qr-code" src="assets/img/qr-code.png" alt="連絡先QRコード">
+            <p class="contact-email"><a
+                href="mailto:hinata.mizuno.portfolio@example.com">hinata.mizuno.portfolio@example.com</a></p>
+          </div>
+          <iframe src="https://form.run/embed/@studio-kenjitakeda-MO7LsbtQtG5Ren3SYJ96?embed=direct"
+            frameborder="0"></iframe>
+
+        </div>
+      </section>
+
     </div>
-    <h1 class="hero-title">Portfolio</h1>
-  </section>
+  </main>
 
-  <div class="container">
+  <footer class="site-footer">
+    <p class="footer-title">Portfolio | Hinata Mizuno</p>
+    <div class="sns-row">
+      <a class="sns-item" href="#" aria-label="Instagram">
+        <img src="assets/img/icon-instagram.png" alt="">
+        <span>@hinataM</span>
+      </a>
+      <a class="sns-item" href="#" aria-label="YouTube">
+        <img src="assets/img/icon-youtube.png" alt="">
+        <span>MINACHI Channel</span>
+      </a>
+    </div>
+    <p class="copyright">© hinata mizuno allright reserved.</p>
+  </footer>
 
-    <section id="profile" class="section profile-section">
-      <h2 class="section-title">Profile</h2>
-      <div class="profile-content">
-        <div class="profile-photo">
-          <img src="assets/img/profile-photo.png" alt="水野ひなた プロフィール写真">
-        </div>
-        <div class="profile-text">
-          <p class="profile-name">水野 ひなた <span class="profile-name-en">Hinata Mizuno</span></p>
-          <p>フリーランス イラストレーター / デザイナー見習い</p>
-          <p>東京都在住</p>
-          <p class="profile-bio">美術大学を卒業したばかりの駆け出しクリエイター。「日常のなかの小さな幸せ」をテーマに、温かみのあるイラストやデザインを制作しています。いつか自分のイラストが絵本になるのが夢です。</p>
-
-          <h3>趣味・特技</h3>
-          <ul class="plain-list">
-            <li>水彩画（特に風景画が得意）</li>
-            <li>カフェ巡り＆ラテアート練習中</li>
-            <li>散歩しながらスケッチ</li>
-            <li>猫の写真を撮ること</li>
-          </ul>
-
-          <h3>使えるツール</h3>
-          <ul class="plain-list">
-            <li>Figma（UI/Webデザイン）</li>
-            <li>Adobe Illustrator（ロゴ・グラフィック）</li>
-            <li>Adobe Photoshop（写真加工・合成）</li>
-            <li>Canva（SNS用バナー）</li>
-          </ul>
-
-          <h3>SNS</h3>
-          <ul class="plain-list">
-            <li>Instagram: @hinata_creates</li>
-            <li>X (Twitter): @hinata_mizuno</li>
-            <li>Behance: behance.net/hinatamizuno</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="graphic" class="section">
-      <h2 class="section-title">Graphic</h2>
-      <div class="work-grid">
-
-        <article class="work-card">
-          <button class="work-thumb" type="button" data-modal-open="modal-logo">
-            <img src="assets/img/work-logo.jpg" alt="ロゴデザイン">
-          </button>
-          <h3 class="work-title">ロゴデザイン</h3>
-          <ul class="skill-list">
-            <li><span class="chk"></span>illustrator</li>
-            <li><span class="chk is-checked"></span>Photoshop</li>
-            <li><span class="chk"></span>Figma</li>
-            <li><span class="chk"></span>Canva</li>
-          </ul>
-        </article>
-
-        <article class="work-card">
-          <button class="work-thumb" type="button" data-modal-open="modal-flyer">
-            <img src="assets/img/work-flyer.jpg" alt="チラシ制作">
-          </button>
-          <h3 class="work-title">チラシ制作</h3>
-          <ul class="skill-list">
-            <li><span class="chk is-checked"></span>illustrator</li>
-            <li><span class="chk"></span>Photoshop</li>
-            <li><span class="chk"></span>Figma</li>
-            <li><span class="chk"></span>Canva</li>
-          </ul>
-        </article>
-
-        <article class="work-card">
-          <button class="work-thumb" type="button" data-modal-open="modal-brand">
-            <img src="assets/img/work-brand.jpg" alt="ブランドデザイン">
-          </button>
-          <h3 class="work-title">ブランドデザイン</h3>
-          <ul class="skill-list">
-            <li><span class="chk"></span>illustrator</li>
-            <li><span class="chk"></span>Photoshop</li>
-            <li><span class="chk is-checked"></span>Figma</li>
-            <li><span class="chk"></span>Canva</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="webtool" class="section">
-      <h2 class="section-title">Web Tool</h2>
-      <div class="work-grid">
-
-        <article class="work-card">
-          <button class="work-thumb" type="button" data-modal-open="modal-banner">
-            <img src="assets/img/work-apparel-banner.jpg" alt="アパレルバナー">
-          </button>
-          <h3 class="work-title">アパレルバナー</h3>
-          <ul class="skill-list">
-            <li><span class="chk"></span>illustrator</li>
-            <li><span class="chk is-checked"></span>Photoshop</li>
-            <li><span class="chk"></span>Figma</li>
-            <li><span class="chk"></span>Canva</li>
-          </ul>
-        </article>
-
-        <article class="work-card">
-          <button class="work-thumb" type="button" data-modal-open="modal-ui">
-            <img src="assets/img/work-ui.jpg" alt="UIデザイン">
-          </button>
-          <h3 class="work-title">UIデザイン</h3>
-          <ul class="skill-list">
-            <li><span class="chk"></span>illustrator</li>
-            <li><span class="chk"></span>Photoshop</li>
-            <li><span class="chk is-checked"></span>Figma</li>
-            <li><span class="chk"></span>Canva</li>
-          </ul>
-        </article>
-
-        <article class="work-card">
-          <button class="work-thumb" type="button" data-modal-open="modal-site">
-            <img src="assets/img/work-site.jpg" alt="サイトデザイン">
-          </button>
-          <h3 class="work-title">サイトデザイン</h3>
-          <ul class="skill-list">
-            <li><span class="chk"></span>illustrator</li>
-            <li><span class="chk"></span>Photoshop</li>
-            <li><span class="chk is-checked"></span>Figma</li>
-            <li><span class="chk is-checked"></span>Canva</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="planning" class="section">
-      <h2 class="section-title">Planning</h2>
-      <div class="planning-grid">
-
-        <a class="planning-card" href="#" target="_blank" rel="noopener">
-          <h3 class="planning-title">テーマパーク企画提案</h3>
-          <div class="planning-visual">
-            <img class="planning-img" src="assets/img/planning-themepark.jpg" alt="テーマパーク企画提案 資料">
-            <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
-          </div>
-        </a>
-
-        <a class="planning-card" href="#" target="_blank" rel="noopener">
-          <h3 class="planning-title">AIを使ったレシピ提案</h3>
-          <div class="planning-visual">
-            <img class="planning-img" src="assets/img/planning-recipe.jpg" alt="AIを使ったレシピ提案 資料">
-            <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
-          </div>
-        </a>
-
-        <a class="planning-card" href="#" target="_blank" rel="noopener">
-          <h3 class="planning-title">絵本制作企画</h3>
-          <div class="planning-visual">
-            <img class="planning-img" src="assets/img/planning-picturebook.jpg" alt="絵本制作企画 資料">
-            <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
-          </div>
-        </a>
-
-        <a class="planning-card" href="#" target="_blank" rel="noopener">
-          <h3 class="planning-title">時事課題</h3>
-          <div class="planning-visual">
-            <img class="planning-img" src="assets/img/planning-news.jpg" alt="時事課題 資料">
-            <img class="planning-icon" src="assets/img/icon-sparkle.png" alt="PDF">
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-area">
-
-        <div class="qr-row">
-          <img class="qr-code" src="assets/img/qr-code.png" alt="連絡先QRコード">
-          <p class="contact-email"><a href="mailto:hinata.mizuno.portfolio@example.com">hinata.mizuno.portfolio@example.com</a></p>
-        </div>
-
-        <form class="contact-form">
-          <div class="form-group">
-            <label for="name">お名前</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">メールアドレス</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">お問い合わせ内容</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="btn-submit">送　信</button>
-        </form>
-
-      </div>
-    </section>
-
-  </div>
-</main>
-
-<footer class="site-footer">
-  <p class="footer-title">Portfolio | Hinata Mizuno</p>
-  <div class="sns-row">
-    <a class="sns-item" href="#" aria-label="Instagram">
-      <img src="assets/img/icon-instagram.png" alt="">
-      <span>@hinataM</span>
-    </a>
-    <a class="sns-item" href="#" aria-label="YouTube">
-      <img src="assets/img/icon-youtube.png" alt="">
-      <span>MINACHI Channel</span>
-    </a>
-  </div>
-  <p class="copyright">© hinata mizuno allright reserved.</p>
-</footer>
-
-<!--
+  <!--
   作品詳細モーダル(<dialog>)
   ・各モーダルの中身はここに直接HTMLで記述しています。テキストや画像を直接編集すればOKです。
   ・開閉はネイティブの <dialog> 機能 + 最小限のJS(js/main.js)で行っています。
 -->
 
-<dialog class="work-dialog" id="modal-logo" aria-labelledby="modal-logo-title">
-  <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
-  <div class="modal-scroll">
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="assets/img/work-logo.jpg" alt="ロゴデザイン">
-      </div>
-      <div class="modal-info">
-        <h3 id="modal-logo-title">ロゴデザイン</h3>
-        <p class="modal-desc">アパレルブランド「AURA」のロゴおよびブランドアイテムデザイン。シンプルながら上質感のあるモノグラムで、幅広い媒体展開を意識して制作。</p>
+  <dialog class="work-dialog" id="modal-logo" aria-labelledby="modal-logo-title">
+    <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="assets/img/work-logo.jpg" alt="ロゴデザイン">
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-logo-title">ロゴデザイン</h3>
+          <p class="modal-desc">アパレルブランド「AURA」のロゴおよびブランドアイテムデザイン。シンプルながら上質感のあるモノグラムで、幅広い媒体展開を意識して制作。</p>
 
-        <ul class="skill-list modal-skills">
-          <li><span class="chk"></span>illustrator</li>
-          <li><span class="chk is-checked"></span>Photoshop</li>
-          <li><span class="chk"></span>Figma</li>
-          <li><span class="chk"></span>Canva</li>
-        </ul>
-
-        <div class="modal-block">
-          <h4>制作概要</h4>
-          <ul>
-            <li>カテゴリ：ロゴデザイン</li>
-            <li>業種：アパレル / ファッション</li>
-            <li>用途：ブランドロゴ・名刺・パッケージ</li>
-            <li>テーマ：上質でミニマルなブランドイメージ</li>
-            <li>ターゲット：20〜40代</li>
+          <ul class="skill-list modal-skills">
+            <li><span class="chk"></span>illustrator</li>
+            <li><span class="chk is-checked"></span>Photoshop</li>
+            <li><span class="chk"></span>Figma</li>
+            <li><span class="chk"></span>Canva</li>
           </ul>
-        </div>
 
-        <div class="modal-block">
-          <h4>デザインのポイント</h4>
-          <ul>
-            <li>拡大縮小しても崩れないシンプルな形状</li>
-            <li>モノトーンでも映えるモノグラム設計</li>
-            <li>名刺やパッケージなど展開しやすいレイアウト</li>
-            <li>ブランドの世界観を表現する余白の使い方</li>
-          </ul>
-        </div>
+          <div class="modal-block">
+            <h4>制作概要</h4>
+            <ul>
+              <li>カテゴリ：ロゴデザイン</li>
+              <li>業種：アパレル / ファッション</li>
+              <li>用途：ブランドロゴ・名刺・パッケージ</li>
+              <li>テーマ：上質でミニマルなブランドイメージ</li>
+              <li>ターゲット：20〜40代</li>
+            </ul>
+          </div>
 
-        <div class="modal-block">
-          <h4>使用ソフト</h4>
-          <p>Illustrator / Photoshop</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</dialog>
+          <div class="modal-block">
+            <h4>デザインのポイント</h4>
+            <ul>
+              <li>拡大縮小しても崩れないシンプルな形状</li>
+              <li>モノトーンでも映えるモノグラム設計</li>
+              <li>名刺やパッケージなど展開しやすいレイアウト</li>
+              <li>ブランドの世界観を表現する余白の使い方</li>
+            </ul>
+          </div>
 
-<dialog class="work-dialog" id="modal-flyer" aria-labelledby="modal-flyer-title">
-  <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
-  <div class="modal-scroll">
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="assets/img/work-flyer.jpg" alt="チラシ制作">
-      </div>
-      <div class="modal-info">
-        <h3 id="modal-flyer-title">チラシ制作</h3>
-        <p class="modal-desc">地域夏祭りイベントの告知チラシ。カラフルなイラストと情報レイアウトで、幅広い世代の目を引くデザインに仕上げた。</p>
-
-        <ul class="skill-list modal-skills">
-          <li><span class="chk is-checked"></span>illustrator</li>
-          <li><span class="chk"></span>Photoshop</li>
-          <li><span class="chk"></span>Figma</li>
-          <li><span class="chk"></span>Canva</li>
-        </ul>
-
-        <div class="modal-block">
-          <h4>制作概要</h4>
-          <ul>
-            <li>カテゴリ：チラシ制作 / イベント告知</li>
-            <li>業種：地域イベント / 観光</li>
-            <li>用途：折込チラシ・掲示物</li>
-            <li>テーマ：夏祭り告知</li>
-            <li>ターゲット：ファミリー層</li>
-          </ul>
-        </div>
-
-        <div class="modal-block">
-          <h4>デザインのポイント</h4>
-          <ul>
-            <li>遠目でも情報が伝わる大胆なタイポグラフィ</li>
-            <li>イラストで賑わいと季節感を演出</li>
-            <li>日時・会場などの情報を整理した視認性の高いレイアウト</li>
-            <li>幅広い世代に親しみやすい配色</li>
-          </ul>
-        </div>
-
-        <div class="modal-block">
-          <h4>使用ソフト</h4>
-          <p>Illustrator</p>
+          <div class="modal-block">
+            <h4>使用ソフト</h4>
+            <p>Illustrator / Photoshop</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
-<dialog class="work-dialog" id="modal-brand" aria-labelledby="modal-brand-title">
-  <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
-  <div class="modal-scroll">
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="assets/img/work-brand.jpg" alt="ブランドデザイン">
-      </div>
-      <div class="modal-info">
-        <h3 id="modal-brand-title">ブランドデザイン</h3>
-        <p class="modal-desc">アパレルブランドのビジュアルイメージ展開。写真とロゴを組み合わせ、ブランドの世界観を統一したビジュアルガイドラインを作成。</p>
+  <dialog class="work-dialog" id="modal-flyer" aria-labelledby="modal-flyer-title">
+    <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="assets/img/work-flyer.jpg" alt="チラシ制作">
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-flyer-title">チラシ制作</h3>
+          <p class="modal-desc">地域夏祭りイベントの告知チラシ。カラフルなイラストと情報レイアウトで、幅広い世代の目を引くデザインに仕上げた。</p>
 
-        <ul class="skill-list modal-skills">
-          <li><span class="chk"></span>illustrator</li>
-          <li><span class="chk"></span>Photoshop</li>
-          <li><span class="chk is-checked"></span>Figma</li>
-          <li><span class="chk"></span>Canva</li>
-        </ul>
-
-        <div class="modal-block">
-          <h4>制作概要</h4>
-          <ul>
-            <li>カテゴリ：ブランドデザイン</li>
-            <li>業種：アパレル / ファッション</li>
-            <li>用途：ブランドガイドライン・広告ビジュアル</li>
-            <li>テーマ：都会的で洗練された世界観</li>
-            <li>ターゲット：20〜30代</li>
+          <ul class="skill-list modal-skills">
+            <li><span class="chk is-checked"></span>illustrator</li>
+            <li><span class="chk"></span>Photoshop</li>
+            <li><span class="chk"></span>Figma</li>
+            <li><span class="chk"></span>Canva</li>
           </ul>
-        </div>
 
-        <div class="modal-block">
-          <h4>デザインのポイント</h4>
-          <ul>
-            <li>写真とロゴのトーンを統一したビジュアル設計</li>
-            <li>様々な媒体で一貫性を保てるガイドライン化</li>
-            <li>余白を活かした上質な印象づくり</li>
-            <li>ブランドカラーを軸にした配色設計</li>
-          </ul>
-        </div>
+          <div class="modal-block">
+            <h4>制作概要</h4>
+            <ul>
+              <li>カテゴリ：チラシ制作 / イベント告知</li>
+              <li>業種：地域イベント / 観光</li>
+              <li>用途：折込チラシ・掲示物</li>
+              <li>テーマ：夏祭り告知</li>
+              <li>ターゲット：ファミリー層</li>
+            </ul>
+          </div>
 
-        <div class="modal-block">
-          <h4>使用ソフト</h4>
-          <p>Figma / Photoshop</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</dialog>
+          <div class="modal-block">
+            <h4>デザインのポイント</h4>
+            <ul>
+              <li>遠目でも情報が伝わる大胆なタイポグラフィ</li>
+              <li>イラストで賑わいと季節感を演出</li>
+              <li>日時・会場などの情報を整理した視認性の高いレイアウト</li>
+              <li>幅広い世代に親しみやすい配色</li>
+            </ul>
+          </div>
 
-<dialog class="work-dialog" id="modal-banner" aria-labelledby="modal-banner-title">
-  <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
-  <div class="modal-scroll">
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="assets/img/work-apparel-banner.jpg" alt="SPRING SALE バナー">
-      </div>
-      <div class="modal-info">
-        <h3 id="modal-banner-title">SPRING SALE バナー</h3>
-        <p class="modal-desc">アパレルブランドの春セール告知用バナー。柔らかなパステルカラーと季節感のあるビジュアルで、春の訪れとお得感を演出。</p>
-
-        <ul class="skill-list modal-skills">
-          <li><span class="chk"></span>illustrator</li>
-          <li><span class="chk is-checked"></span>Photoshop</li>
-          <li><span class="chk"></span>Figma</li>
-          <li><span class="chk"></span>Canva</li>
-        </ul>
-
-        <div class="modal-block">
-          <h4>制作概要</h4>
-          <ul>
-            <li>カテゴリ：バナー広告</li>
-            <li>業種：アパレル / ファッション</li>
-            <li>用途：ECサイト・SNS広告用</li>
-            <li>テーマ：春の新作キャンペーン</li>
-            <li>ターゲット：20〜30代女性</li>
-          </ul>
-        </div>
-
-        <div class="modal-block">
-          <h4>デザインのポイント</h4>
-          <ul>
-            <li>春を感じさせる淡いトーンの配色</li>
-            <li>視認性の高いキャッチコピー文字配置</li>
-            <li>商品写真を引き立てる余白設計</li>
-            <li>ブランドの世界観を損なわない上品なレイアウト</li>
-          </ul>
-        </div>
-
-        <div class="modal-block">
-          <h4>使用ソフト</h4>
-          <p>Figma / Adobe Photoshop</p>
+          <div class="modal-block">
+            <h4>使用ソフト</h4>
+            <p>Illustrator</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
-<dialog class="work-dialog" id="modal-ui" aria-labelledby="modal-ui-title">
-  <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
-  <div class="modal-scroll">
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="assets/img/work-ui.jpg" alt="UIデザイン">
-      </div>
-      <div class="modal-info">
-        <h3 id="modal-ui-title">UIデザイン</h3>
-        <p class="modal-desc">業務効率化ツールのUIデザインプロトタイプ。使いやすさを重視したダッシュボード画面を設計。</p>
+  <dialog class="work-dialog" id="modal-brand" aria-labelledby="modal-brand-title">
+    <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="assets/img/work-brand.jpg" alt="ブランドデザイン">
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-brand-title">ブランドデザイン</h3>
+          <p class="modal-desc">アパレルブランドのビジュアルイメージ展開。写真とロゴを組み合わせ、ブランドの世界観を統一したビジュアルガイドラインを作成。</p>
 
-        <ul class="skill-list modal-skills">
-          <li><span class="chk"></span>illustrator</li>
-          <li><span class="chk"></span>Photoshop</li>
-          <li><span class="chk is-checked"></span>Figma</li>
-          <li><span class="chk"></span>Canva</li>
-        </ul>
-
-        <div class="modal-block">
-          <h4>制作概要</h4>
-          <ul>
-            <li>カテゴリ：UIデザイン</li>
-            <li>業種：SaaS / 業務システム</li>
-            <li>用途：Webアプリのプロトタイプ</li>
-            <li>テーマ：直感的に使えるダッシュボード</li>
-            <li>ターゲット：業務利用者</li>
+          <ul class="skill-list modal-skills">
+            <li><span class="chk"></span>illustrator</li>
+            <li><span class="chk"></span>Photoshop</li>
+            <li><span class="chk is-checked"></span>Figma</li>
+            <li><span class="chk"></span>Canva</li>
           </ul>
-        </div>
 
-        <div class="modal-block">
-          <h4>デザインのポイント</h4>
-          <ul>
-            <li>情報の優先度を整理したレイアウト</li>
-            <li>ダークテーマで長時間作業の負担を軽減</li>
-            <li>コンポーネントを統一したデザインシステム</li>
-            <li>操作導線を意識したボタン配置</li>
-          </ul>
-        </div>
+          <div class="modal-block">
+            <h4>制作概要</h4>
+            <ul>
+              <li>カテゴリ：ブランドデザイン</li>
+              <li>業種：アパレル / ファッション</li>
+              <li>用途：ブランドガイドライン・広告ビジュアル</li>
+              <li>テーマ：都会的で洗練された世界観</li>
+              <li>ターゲット：20〜30代</li>
+            </ul>
+          </div>
 
-        <div class="modal-block">
-          <h4>使用ソフト</h4>
-          <p>Figma</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</dialog>
+          <div class="modal-block">
+            <h4>デザインのポイント</h4>
+            <ul>
+              <li>写真とロゴのトーンを統一したビジュアル設計</li>
+              <li>様々な媒体で一貫性を保てるガイドライン化</li>
+              <li>余白を活かした上質な印象づくり</li>
+              <li>ブランドカラーを軸にした配色設計</li>
+            </ul>
+          </div>
 
-<dialog class="work-dialog" id="modal-site" aria-labelledby="modal-site-title">
-  <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
-  <div class="modal-scroll">
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="assets/img/work-site.jpg" alt="サイトデザイン">
-      </div>
-      <div class="modal-info">
-        <h3 id="modal-site-title">サイトデザイン</h3>
-        <p class="modal-desc">不動産会社のコーポレートサイトデザイン。信頼感と親しみやすさを両立したレスポンシブデザイン。</p>
-
-        <ul class="skill-list modal-skills">
-          <li><span class="chk"></span>illustrator</li>
-          <li><span class="chk"></span>Photoshop</li>
-          <li><span class="chk is-checked"></span>Figma</li>
-          <li><span class="chk is-checked"></span>Canva</li>
-        </ul>
-
-        <div class="modal-block">
-          <h4>制作概要</h4>
-          <ul>
-            <li>カテゴリ：サイトデザイン</li>
-            <li>業種：不動産</li>
-            <li>用途：コーポレートサイト</li>
-            <li>テーマ：信頼感のあるブランディング</li>
-            <li>ターゲット：物件を探すファミリー層</li>
-          </ul>
-        </div>
-
-        <div class="modal-block">
-          <h4>デザインのポイント</h4>
-          <ul>
-            <li>写真を活かしたシンプルなレイアウト</li>
-            <li>PC/スマホどちらも見やすいレスポンシブ設計</li>
-            <li>問い合わせまでの導線を意識した構成</li>
-            <li>信頼感のある配色とタイポグラフィ</li>
-          </ul>
-        </div>
-
-        <div class="modal-block">
-          <h4>使用ソフト</h4>
-          <p>Figma / Canva</p>
+          <div class="modal-block">
+            <h4>使用ソフト</h4>
+            <p>Figma / Photoshop</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
-<script src="js/main.js"></script>
+  <dialog class="work-dialog" id="modal-banner" aria-labelledby="modal-banner-title">
+    <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="assets/img/work-apparel-banner.jpg" alt="SPRING SALE バナー">
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-banner-title">SPRING SALE バナー</h3>
+          <p class="modal-desc">アパレルブランドの春セール告知用バナー。柔らかなパステルカラーと季節感のあるビジュアルで、春の訪れとお得感を演出。</p>
+
+          <ul class="skill-list modal-skills">
+            <li><span class="chk"></span>illustrator</li>
+            <li><span class="chk is-checked"></span>Photoshop</li>
+            <li><span class="chk"></span>Figma</li>
+            <li><span class="chk"></span>Canva</li>
+          </ul>
+
+          <div class="modal-block">
+            <h4>制作概要</h4>
+            <ul>
+              <li>カテゴリ：バナー広告</li>
+              <li>業種：アパレル / ファッション</li>
+              <li>用途：ECサイト・SNS広告用</li>
+              <li>テーマ：春の新作キャンペーン</li>
+              <li>ターゲット：20〜30代女性</li>
+            </ul>
+          </div>
+
+          <div class="modal-block">
+            <h4>デザインのポイント</h4>
+            <ul>
+              <li>春を感じさせる淡いトーンの配色</li>
+              <li>視認性の高いキャッチコピー文字配置</li>
+              <li>商品写真を引き立てる余白設計</li>
+              <li>ブランドの世界観を損なわない上品なレイアウト</li>
+            </ul>
+          </div>
+
+          <div class="modal-block">
+            <h4>使用ソフト</h4>
+            <p>Figma / Adobe Photoshop</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="work-dialog" id="modal-ui" aria-labelledby="modal-ui-title">
+    <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="assets/img/work-ui.jpg" alt="UIデザイン">
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-ui-title">UIデザイン</h3>
+          <p class="modal-desc">業務効率化ツールのUIデザインプロトタイプ。使いやすさを重視したダッシュボード画面を設計。</p>
+
+          <ul class="skill-list modal-skills">
+            <li><span class="chk"></span>illustrator</li>
+            <li><span class="chk"></span>Photoshop</li>
+            <li><span class="chk is-checked"></span>Figma</li>
+            <li><span class="chk"></span>Canva</li>
+          </ul>
+
+          <div class="modal-block">
+            <h4>制作概要</h4>
+            <ul>
+              <li>カテゴリ：UIデザイン</li>
+              <li>業種：SaaS / 業務システム</li>
+              <li>用途：Webアプリのプロトタイプ</li>
+              <li>テーマ：直感的に使えるダッシュボード</li>
+              <li>ターゲット：業務利用者</li>
+            </ul>
+          </div>
+
+          <div class="modal-block">
+            <h4>デザインのポイント</h4>
+            <ul>
+              <li>情報の優先度を整理したレイアウト</li>
+              <li>ダークテーマで長時間作業の負担を軽減</li>
+              <li>コンポーネントを統一したデザインシステム</li>
+              <li>操作導線を意識したボタン配置</li>
+            </ul>
+          </div>
+
+          <div class="modal-block">
+            <h4>使用ソフト</h4>
+            <p>Figma</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="work-dialog" id="modal-site" aria-labelledby="modal-site-title">
+    <button class="modal-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="assets/img/work-site.jpg" alt="サイトデザイン">
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-site-title">サイトデザイン</h3>
+          <p class="modal-desc">不動産会社のコーポレートサイトデザイン。信頼感と親しみやすさを両立したレスポンシブデザイン。</p>
+
+          <ul class="skill-list modal-skills">
+            <li><span class="chk"></span>illustrator</li>
+            <li><span class="chk"></span>Photoshop</li>
+            <li><span class="chk is-checked"></span>Figma</li>
+            <li><span class="chk is-checked"></span>Canva</li>
+          </ul>
+
+          <div class="modal-block">
+            <h4>制作概要</h4>
+            <ul>
+              <li>カテゴリ：サイトデザイン</li>
+              <li>業種：不動産</li>
+              <li>用途：コーポレートサイト</li>
+              <li>テーマ：信頼感のあるブランディング</li>
+              <li>ターゲット：物件を探すファミリー層</li>
+            </ul>
+          </div>
+
+          <div class="modal-block">
+            <h4>デザインのポイント</h4>
+            <ul>
+              <li>写真を活かしたシンプルなレイアウト</li>
+              <li>PC/スマホどちらも見やすいレスポンシブ設計</li>
+              <li>問い合わせまでの導線を意識した構成</li>
+              <li>信頼感のある配色とタイポグラフィ</li>
+            </ul>
+          </div>
+
+          <div class="modal-block">
+            <h4>使用ソフト</h4>
+            <p>Figma / Canva</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>
